@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -p .",
     "start:dev": "ts-node-dev src/index.ts",
+    "start": "NODE_PATH=./dist node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

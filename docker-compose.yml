@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  mongo-shard-ts:
+    image: mongo-shard-ts
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - "4001:4001"
+    volumes: 
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run start
+    links: 
+      - db
+  db:
+    image: mongo:latest
+    ports: 
+      - "27017:27017"
