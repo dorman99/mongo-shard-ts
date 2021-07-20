@@ -2,8 +2,8 @@ import { Types, Document } from "mongoose";
 
 export interface TodoInterface extends Document {
     name: string;
-    c_at: string;
-    u_at: string;
+    c_at: Date;
+    u_at: Date;
     accountId: Types.ObjectId;
     isDone: boolean;
     deleted: boolean;

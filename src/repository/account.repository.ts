@@ -10,7 +10,7 @@ export const create = async (
 };
 
 
-export const find = async (id: Types.ObjectId): Promise<AccountInterface | null> => {
+export const find = async (id: Types.ObjectId): Promise<AccountInterface> => {
     return await AccountModel.findOne({_id: id, deleted: false}).exec();
 }
 
